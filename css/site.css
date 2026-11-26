@@ -1,0 +1,305 @@
+/* debiderryberry.com — one stylesheet for every page. */
+
+:root {
+  --bg: #d6a6d9;
+  --bg-end: #ea7af0;
+  --text: #212529;
+  --link: #0000ff;
+  --link-soft: #3598db;
+  --link-event: #843fa1;
+  --button: #037bfe;
+  --font: "Open Sans", sans-serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Anton, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 var(--font);
+}
+
+img { max-width: 100%; height: auto; vertical-align: middle; }
+a { color: var(--link); }
+p { margin: 0 0 1.5em; }
+p:last-child { margin-bottom: 0; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: 15px; }
+.center { text-align: center; }
+.small { font-size: 12px; }
+
+/* ---------- Menu (the "☰ Menu" bar above the header) ---------- */
+
+.menu { background: var(--bg); font-family: var(--font-ui); }
+.menu summary {
+  display: inline-block;
+  padding: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  line-height: normal;
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu ul { margin: 0; padding: 0; list-style: none; }
+.menu li a {
+  display: block;
+  padding: 8px 10px;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.menu li a:hover { background: rgba(255, 255, 255, .15); }
+
+/* ---------- Header and footer ---------- */
+
+.site-header, .site-footer { background: linear-gradient(90deg, var(--bg), var(--bg-end)); }
+.site-header { padding: 30px 0; }
+.site-header .container { display: flex; align-items: center; }
+.site-header .logo-link { flex: 0 0 12.333%; text-align: center; }
+.site-header .logo { width: 72px; height: 72px; border-radius: 50%; }
+.site-name {
+  margin: 0 0 8px;
+  color: #fff;
+  font: 38px/1.2 "Source Sans Pro", sans-serif;
+}
+
+.site-footer { padding: 52px 0; }
+.site-footer .container { display: flex; align-items: center; }
+.site-footer .container > * { flex: 1; }
+.site-footer .home-link { color: var(--link-soft); font-size: 14px; text-decoration: none; }
+.site-footer .contact-link {
+  color: var(--text);
+  font: 700 16px var(--font-ui);
+  text-align: center;
+  text-decoration: none;
+}
+.social { display: flex; justify-content: flex-end; gap: 8px; }
+.social svg { display: block; height: 21px; width: auto; fill: currentColor; }
+.social .facebook, .social .linkedin { color: #120fe6; }
+.social .youtube { color: #ee1b1b; }
+.social .tiktok { color: #0a0a0a; }
+
+/* ---------- Page content ---------- */
+
+main { padding-block: 60px; }
+
+.title, .heading {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.title { font-size: 60px; text-align: center; }
+.title.compact { font-size: 46px; color: #000; }
+.heading { font-size: 60px; }
+.heading.medium { font-size: 38px; }
+
+/* Columns have no gap; each cell gets 15px of padding instead (as on the old site). */
+.grid { display: grid; row-gap: 45px; }
+.grid.tight { row-gap: 5px; }
+.grid > * { padding: 0 15px; }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.split-3-7 { grid-template-columns: 3fr 7fr; }
+.section { margin-top: 45px; }
+
+/* Responsive 16:9 YouTube embeds */
+.video iframe { display: block; width: 100%; max-width: 456px; height: auto; aspect-ratio: 16 / 9; margin: 0 auto; border: 0; }
+.video p { margin: 0 0 15px; text-align: center; }
+
+/* Character cards: picture, name, show, audio clip */
+.card { text-align: center; }
+.card img { width: 150px; height: 150px; object-fit: contain; }
+.card h3 { margin: 15px 0 0; font: 400 16px/1.5 var(--font-ui); }
+.show { display: block; font: italic 12px/1.5 var(--font-ui); }
+.characters .video p { font-family: var(--font-ui); }
+.clips .video iframe { height: 200px; aspect-ratio: auto; }
+
+/* Audio player (built by /js/player.js; plain <audio controls> without JavaScript) */
+.player { display: flex; align-items: center; gap: 8px; margin: 15px 10px 10px; }
+.player audio { flex: 1; min-width: 0; }
+.player button, .player .download {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #000;
+  cursor: pointer;
+  line-height: 0;
+}
+.player svg { width: 15px; height: 15px; fill: currentColor; }
+.player .bar {
+  flex: 1;
+  height: 6px;
+  background: #010101;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.player .bar span { display: block; width: 0; height: 100%; background: #ac987c; }
+
+/* Appearances */
+.events h1 { margin: 0; font: 300 56px/1.2 var(--font-ui); text-align: center; }
+.events .intro { margin: 0 0 30px; font: 20px/1.2 var(--font-ui); text-align: center; }
+.events table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); }
+.events { padding-top: 15px; }
+.events td { width: 33.33%; padding: 30px 0; vertical-align: top; }
+.events a { color: var(--link-event); }
+.events .note { margin-top: 30px; font: 10px var(--font-ui); text-align: center; }
+
+/* Autographs */
+.autographs h1 { margin: 0; font-size: 24px; font-weight: 400; }
+.autographs p { margin: 0; }
+.autographs .indent { padding-left: 1.6em; }
+
+/* Biography */
+.bio { padding-top: 30px; }
+.bio .split-3-7 > * { padding: 0; }
+.bio .heading { margin-bottom: 0; }
+.bio .headshot { width: 96%; }
+.bio .body { padding-left: 15px; color: #000; line-height: 1.36; }
+.bio .body p { margin: 0 0 22px; }
+.bio .body a { color: var(--link-event); }
+.bio .imdb { display: block; width: 13%; margin: 0 auto; }
+.bio .credits { margin-top: 15px; padding: 15px; color: #000; font-family: Montserrat, sans-serif; }
+.bio .credits ul { margin: 0; padding-left: 40px; }
+.bio .credits li { margin-bottom: 5px; line-height: 1.2; }
+.bio .story { padding: 15px; color: #000; }
+.bio .story p { margin-bottom: 24px; }
+.bio .story + .story { padding-top: 0; }
+.bio .story + .story p { margin-bottom: 15px; }
+.bio .story a { font-weight: 700; }
+
+/* Contact */
+.contact-form { display: grid; grid-template-columns: 3fr 7fr; margin-top: 45px; }
+.contact-form .icon { padding-top: 40px; text-align: center; }
+.contact-form .icon img { width: 31px; }
+.contact-form form { padding: 15px; font-family: var(--font-ui); }
+.contact-form input, .contact-form textarea {
+  display: block;
+  width: 60%;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: var(--bg);
+  font: inherit;
+}
+.contact-form textarea { height: 64px; }
+.contact-form button {
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 4px;
+  background: #007bff;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.agents { margin-top: 90px; }
+.agents .agent { display: flex; flex-direction: column; padding: 15px 50px 15px 40px; }
+.agents .agent p { margin: 0; }
+.agents .agent a { color: #000; }
+.agents .role { font-size: 20px; }
+.agents .role small { display: block; font-size: 18px; }
+.agents .phone { margin-top: auto; padding-top: 24px; }
+.agents .role { margin-bottom: 0; }
+.button {
+  display: block;
+  width: 260px;
+  margin: 5px auto 0;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: var(--button);
+  color: #000;
+  font: 16px/1 var(--font-ui);
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Kids music, music and voice-over help: picture on one side, text on the other */
+.feature { display: grid; grid-template-columns: 1fr 1fr; align-items: start; margin-top: 30px; }
+.feature > :last-child { padding: 0 15px; }
+.feature .media { text-align: center; }
+.feature .heading { text-align: center; }
+.feature .heading.left { text-align: left; }
+.feature strong a, .feature a strong { color: var(--link); }
+.kids { padding-top: 30px; }
+.albums { margin-top: 45px; }
+.albums.grid > * { padding: 0; }
+.album { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-items: start; margin-bottom: 56px; }
+
+.streaming { display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; align-items: center; margin-top: 30px; }
+.streaming .stack { display: flex; flex-direction: column; gap: 10px; }
+.streaming img { width: 200px; }
+
+.products { row-gap: 60px; margin-top: 30px; }
+.products .item p { min-height: 48px; margin-bottom: 15px; }
+.products .item div { text-align: center; }
+.calendly { width: 100%; height: 700px; border: 0; }
+.coaching .heading, .supplies .heading { text-align: left; }
+
+/* ---------- Phones: one column, centred ---------- */
+
+@media (max-width: 767px) {
+  .menu { text-align: right; }
+  .menu ul { text-align: left; }
+
+  .site-header .container, .site-footer .container { flex-direction: column; text-align: center; }
+  .site-header .logo-link { margin-bottom: 8px; }
+  .site-footer .container { flex-direction: column-reverse; gap: 4px; }
+  .social { justify-content: center; }
+
+  main, .heading, .heading.left, .coaching .heading, .supplies .heading { text-align: center; }
+  .grid, .feature, .album, .contact-form, .streaming, .cols-2, .cols-3, .cols-4, .split-3-7 { grid-template-columns: 1fr; }
+  .streaming { gap: 10px; }
+  .contact-form .icon { text-align: center; }
+  .contact-form input, .contact-form textarea { width: 100%; }
+  .events td { display: block; width: auto; padding-top: 10px; }
+  .events tr { display: block; padding-top: 20px; }
+  .agents .agent { padding: 15px 0; }
+  .bio .body { padding-left: 0; }
+  /* On phones the old site shows the text before the picture. */
+  .bio .split-3-7 > :first-child, .feature .media { order: 2; }
+  .feature.book .media { order: 0; }
+  .autographs, .contact-form form { text-align: left; }
+  .bio .imdb { width: 30%; }
+}
+
+/* Characters page spacing */
+.clips { margin-top: 20px; }
+.cards { margin-top: 65px; row-gap: 58px; }
+
+/* Autographs address and indented notes */
+.autographs { padding-top: 15px; }
+.autographs a { text-decoration: none; }
+.autographs address { padding-left: 1.6em; font-style: normal; }
+
+/* Music */
+.music .photos { margin-top: 30px; }
+.streaming-intro { margin-top: 45px; }
+
+/* Voice-over help */
+.book-title { margin: 30px 0 24px; font: 400 60px/1.2 var(--font); }
+a.soft { color: var(--link-soft); }
+a.plain { color: inherit; text-decoration: none; }
+.vo-help { padding-top: 15px; }
+.vo-help .feature { margin-top: 45px; }
+.vo-help .products + .feature { margin-top: 75px; }
+
+/* Image widths (relative to their column) */
+.w-36 { width: 36%; }
+.w-40 { width: 40%; }
+.w-45 { width: 45%; }
+.w-56 { width: 56%; }
+.w-60 { width: 60%; }
+.w-70 { width: 70%; }
+.w-80 { width: 80%; }
+.w-180px { width: 180px; }
