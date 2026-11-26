@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+
+
+@font-face {
+    font-family: "BOSTHON BRUSH";
+    src: url("https://voiceactor.com/fonts/BOSTHONBRUSHRegular.ttf");
+}
+@font-face {
+    font-family: "Avalon";
+    src: url("https://voiceactor.com/fonts/Avalon-Regular.ttf");
+}
+@font-face {
+    font-family: "Grenadier NF";
+    src: url("https://voiceactor.com/fonts/GrenadierNF.ttf");
+}
+.stellarnav > ul > li > a {
+    padding: 2px 8px;
+    font-size: 16px;
+}
+a {
+    text-decoration: none !important;
+    color: #000000;
+}
+:focus-visible {
+    outline: none;
+}
+.stellarnav li a {
+    font-weight: bold;
+}
+.stellarnav ul ul {
+    height: auto !important;
+    overflow: visible !important;
+}
+.stellarnav {
+    background: transparent;
+}
+.mobile-spacing {
+    padding-top: 50px;
+}
+.builderjs-layout .container {
+    max-width: 1200px;
+}
+.slick-dots {
+    position: relative !important;
+}
+.social-icons .d-inline-block{
+    vertical-align: middle;
+}
+@media only screen and (max-width: 1200px) {
+    .builderjs-layout .container {
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .col-responsive {
+        width: 100% !important;
+    }
+    footer .stellarnav ul {
+        display: block;
+    }
+    footer .stellarnav ul ul {
+        display: none;
+    }
+}
