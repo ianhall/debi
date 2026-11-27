@@ -210,7 +210,8 @@ main { padding-block: 60px; }
 .agents .agent a { color: #000; }
 .agents .role { font-size: 20px; }
 .agents .role small { display: block; font-size: 18px; }
-.agents .phone { margin-top: auto; padding-top: 24px; }
+/* Push each agency's phone line and button to the bottom so both buttons line up. */
+.agents .agent .phone { margin-top: auto; padding-top: 24px; }
 .agents .role { margin-bottom: 0; }
 .button {
   display: block;
