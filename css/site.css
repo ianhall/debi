@@ -72,17 +72,34 @@ p:last-child { margin-bottom: 0; }
 .site-footer .container { display: flex; align-items: center; }
 .site-footer .container > * { flex: 1; }
 .site-footer .home-link { color: var(--link-soft); font-size: 14px; text-decoration: none; }
-.site-footer .contact-link {
-  color: var(--text);
+.site-footer .contact-link,
+.site-footer .contact-link:visited {
+  color: var(--link);
   font: 700 16px var(--font-ui);
   text-align: center;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
+.site-footer .contact-link:hover { color: #0000b3; text-decoration-thickness: 2px; }
+.site-footer a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
 .social { display: flex; justify-content: flex-end; gap: 8px; }
 .social svg { display: block; height: 21px; width: auto; fill: currentColor; }
 .social .facebook, .social .linkedin { color: #120fe6; }
 .social .youtube { color: #ee1b1b; }
 .social .tiktok { color: #0a0a0a; }
+/* The KIDS channel's icon gets a small yellow badge so the two YouTube icons can be told apart. */
+.social .youtube-kids { position: relative; margin-right: 10px; }
+.social .youtube-kids .badge {
+  position: absolute;
+  right: -10px;
+  bottom: -8px;
+  padding: 2px 3px;
+  border-radius: 6px;
+  background: #ffd400;
+  color: #000;
+  font: 800 8px/1 Arial, sans-serif;
+  letter-spacing: .3px;
+}
 
 /* ---------- Page content ---------- */
 
@@ -259,7 +276,7 @@ main { padding-block: 60px; }
 
   .site-header .container, .site-footer .container { flex-direction: column; text-align: center; }
   .site-header .logo-link { margin-bottom: 8px; }
-  .site-footer .container { flex-direction: column-reverse; gap: 4px; }
+  .site-footer .container { flex-direction: column-reverse; gap: 12px; }
   .social { justify-content: center; }
 
   main, .heading, .heading.left, .coaching .heading, .supplies .heading { text-align: center; }
