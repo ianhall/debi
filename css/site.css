@@ -127,7 +127,10 @@ main { padding-block: 60px; }
 .section { margin-top: 45px; }
 
 /* Responsive 16:9 YouTube embeds */
-.video iframe { display: block; width: 100%; max-width: 456px; height: auto; aspect-ratio: 16 / 9; margin: 0 auto; border: 0; }
+/* Each video block is a column with the video pinned to the bottom, so videos in a row
+   line up even when one caption wraps onto two lines. */
+.video { display: flex; flex-direction: column; }
+.video iframe { display: block; width: 100%; max-width: 456px; height: auto; aspect-ratio: 16 / 9; margin: auto auto 0; border: 0; }
 .video p { margin: 0 0 15px; text-align: center; }
 
 /* Character cards: picture, name, show, audio clip */

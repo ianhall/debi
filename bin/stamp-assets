@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Adds a content fingerprint to every page's links to the stylesheet and script,
+# e.g. css/site.css?v=3f9a1c2e, so browsers fetch the new file as soon as it
+# changes instead of using a saved copy.
+#
+# Run from the repository root after editing css/site.css or js/player.js:
+#
+#   bin/stamp-assets
+#
+# It rewrites the ?v=... values in index.html, 404.html and */index.html.
+
+require "digest"
+
+ASSETS = %w[css/site.css js/player.js].freeze
+
+root = File.expand_path("..", __dir__)
+Dir.chdir(root)
+
+versions = ASSETS.to_h { |path| [path, Digest::SHA256.file(path).hexdigest[0, 8]] }
+pages = Dir["index.html", "404.html", "*/index.html"].sort
+
+changed = pages.count do |page|
+  html = File.read(page, encoding: "UTF-8")
+  updated = ASSETS.reduce(html) do |text, asset|
+    # Matches "css/site.css", "../css/site.css" and any existing ?v=... suffix.
+    text.gsub(%r{((?:\.\./)?#{Regexp.escape(asset)})(?:\?v=[0-9a-f]+)?"}) do
+      %(#{Regexp.last_match(1)}?v=#{versions[asset]}")
+    end
+  end
+  next false if updated == html
+
+  File.write(page, updated, encoding: "UTF-8")
+  true
+end
+
+versions.each { |asset, v| puts "#{asset} -> v=#{v}" }
+puts "#{changed} of #{pages.size} pages updated"

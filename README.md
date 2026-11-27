@@ -22,6 +22,18 @@ All links between pages and to images, CSS and JS are relative (`css/site.css`,
 such as `https://<username>.github.io/debi/`, and when opened straight from disk.
 Keep new links relative too.
 
+### After editing the CSS or JS
+
+Pages link to the stylesheet and script with a version fingerprint, for example
+`css/site.css?v=f578c648`. Browsers keep saved copies of these files, so the
+fingerprint is what makes them fetch the new version straight away. After
+changing `css/site.css` or `js/player.js`, run this from the repository root:
+
+    bin/stamp-assets
+
+It updates the fingerprint on every page. Running it when nothing changed is
+harmless.
+
 Outside services still used: YouTube (videos), Google Fonts, Formspree (contact
 form) and Calendly (coaching bookings).
 
