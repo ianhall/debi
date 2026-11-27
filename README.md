@@ -11,7 +11,7 @@ one small JS file). No build step.
 | `404.html` | "Page not found" page. |
 | `css/site.css` | The only stylesheet. Colours and fonts are defined at the top in `:root`. |
 | `js/player.js` | The audio player on the Characters page (play/pause, progress bar). Without JavaScript the browser's own player is shown. |
-| `images/` | All pictures. `images/icons.svg` holds the social and download icons. |
+| `images/` | All pictures. `images/icons.svg` holds the social media icons. |
 | `audio/` | The 23 character voice clips. |
 
 The header, menu and footer are repeated in every page. If you change one (for

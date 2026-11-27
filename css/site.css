@@ -131,7 +131,11 @@ main { padding-block: 60px; }
 .video p { margin: 0 0 15px; text-align: center; }
 
 /* Character cards: picture, name, show, audio clip */
-.card { text-align: center; }
+/* Cards are columns with the player pinned to the bottom, so players in a row line up
+   even when one caption wraps onto two lines. */
+.card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.card .show { margin-bottom: 15px; }
+.card .player { align-self: stretch; margin-top: auto; }
 .card img { width: 150px; height: 150px; object-fit: contain; }
 .card h3 { margin: 15px 0 0; font: 400 16px/1.5 var(--font-ui); }
 .show { display: block; font: italic 12px/1.5 var(--font-ui); }
@@ -141,7 +145,7 @@ main { padding-block: 60px; }
 /* Audio player (built by /js/player.js; plain <audio controls> without JavaScript) */
 .player { display: flex; align-items: center; gap: 8px; margin: 15px 10px 10px; }
 .player audio { flex: 1; min-width: 0; }
-.player button, .player .download {
+.player button {
   flex: none;
   padding: 0;
   border: 0;
