@@ -267,8 +267,11 @@ main { padding-block: 60px; }
   .streaming { gap: 10px; }
   .contact-form .icon { text-align: center; }
   .contact-form input, .contact-form textarea { width: 100%; }
-  .events td { display: block; width: auto; padding-top: 10px; }
-  .events tr { display: block; padding-top: 20px; }
+  /* Each event's date, place and link: three single-spaced, left-aligned lines,
+     with one blank line between events. */
+  .events table { text-align: left; }
+  .events tr { display: block; margin-bottom: 1.5em; }
+  .events td { display: block; width: auto; padding: 0; }
   .agents .agent { padding: 15px 0; }
   .bio .body { padding-left: 0; }
   /* On phones the old site shows the text before the picture. */
