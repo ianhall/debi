@@ -118,7 +118,10 @@ main { padding-block: 60px; }
 
 /* Columns have no gap; each cell gets 15px of padding instead (as on the old site). */
 .grid { display: grid; row-gap: 45px; }
-.grid.tight { row-gap: 5px; }
+/* Home page rows of three videos: a clear gap above each caption and only a small one
+   below it, so the caption reads as belonging to the video underneath. */
+.grid.tight { row-gap: 40px; }
+.grid.tight .video p { margin-bottom: 6px; }
 .grid > * { padding: 0 15px; }
 .cols-2 { grid-template-columns: repeat(2, 1fr); }
 .cols-3 { grid-template-columns: repeat(3, 1fr); }
