@@ -274,7 +274,7 @@ main { padding-block: 60px; }
   /* On phones the old site shows the text before the picture. */
   .bio .split-3-7 > :first-child, .feature .media { order: 2; }
   .feature.book .media { order: 0; }
-  .autographs, .contact-form form { text-align: left; }
+  .autographs, .contact-form form, .bio .credits { text-align: left; }
   .bio .imdb { width: 30%; }
 }
 
