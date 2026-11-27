@@ -190,7 +190,23 @@ main { padding-block: 60px; }
 .bio .body { padding-left: 15px; color: #000; line-height: 1.36; }
 .bio .body p { margin: 0 0 22px; }
 .bio .body a { color: var(--link-event); }
-.bio .imdb { display: block; width: 13%; margin: 0 auto; }
+/* YouTube KIDS icon and IMDb logo side by side under the first block of text, both 51px tall.
+   The badge is the footer's KIDS badge scaled up to match. */
+.bio-links { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 22px; }
+.bio .imdb { display: block; height: 51px; width: auto; }
+.bio-links .youtube-kids { position: relative; display: block; color: #ee1b1b; line-height: 0; }
+.bio-links .youtube-kids svg { display: block; height: 51px; width: auto; fill: currentColor; }
+.bio-links .youtube-kids .badge {
+  position: absolute;
+  right: -22px;
+  bottom: -14px;
+  padding: 4px 6px;
+  border-radius: 12px;
+  background: #ffd400;
+  color: #000;
+  font: 800 17px/1 Arial, sans-serif;
+  letter-spacing: .5px;
+}
 .bio .credits { margin-top: 15px; padding: 15px; color: #000; font-family: Montserrat, sans-serif; }
 .bio .credits ul { margin: 0; padding-left: 40px; }
 .bio .credits li { margin-bottom: 5px; line-height: 1.2; }
@@ -302,7 +318,6 @@ main { padding-block: 60px; }
   .bio .split-3-7 > :first-child, .feature .media { order: 2; }
   .feature.book .media { order: 0; }
   .autographs, .contact-form form, .bio .credits { text-align: left; }
-  .bio .imdb { width: 30%; }
 }
 
 /* Characters page spacing */
