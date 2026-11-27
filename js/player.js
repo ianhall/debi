@@ -1,5 +1,5 @@
 // Minimal audio player: play/pause button and a clickable progress bar.
-// Markup: <div class="player"><audio src="…" controls preload="none"></audio><a class="download" …></a></div>
+// Markup: <div class="player"><audio src="…" controls preload="none"></audio></div>
 // Without JavaScript the browser's own <audio controls> is shown instead.
 (function () {
   var ICON = {
