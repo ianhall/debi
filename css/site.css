@@ -315,7 +315,14 @@ main { padding-block: 60px; }
   .agents .agent { padding: 15px 0; }
   .bio .body { padding-left: 0; }
   /* On phones the old site shows the text before the picture. */
-  .bio .split-3-7 > :first-child, .feature .media { order: 2; }
+  .feature .media { order: 2; }
+  /* Biography on phones: title, then the photo (centred, about 30% smaller than on
+     desktop), then the text. The text column's children join the grid so the photo
+     can sit between the title and the first paragraph. */
+  .bio .split-3-7 { row-gap: 15px; }
+  .bio .split-3-7 > :last-child { display: contents; }
+  .bio .heading { order: -1; }
+  .bio .headshot { display: block; width: 236px; margin: 0 auto; }
   .feature.book .media { order: 0; }
   .autographs, .contact-form form, .bio .credits { text-align: left; }
 }
