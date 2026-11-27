@@ -9,7 +9,6 @@
   --link-event: #843fa1;
   --button: #037bfe;
   --font: "Open Sans", sans-serif;
-  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: Anton, sans-serif;
 }
 
@@ -33,7 +32,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- Menu (the "☰ Menu" bar above the header) ---------- */
 
-.menu { background: var(--bg); font-family: var(--font-ui); }
+.menu { background: var(--bg); font-family: var(--font); }
 .menu summary {
   display: inline-block;
   padding: 15px;
@@ -65,7 +64,7 @@ p:last-child { margin-bottom: 0; }
 .site-name {
   margin: 0 0 8px;
   color: #fff;
-  font: 38px/1.2 "Source Sans Pro", sans-serif;
+  font: 38px/1.2 var(--font);
 }
 
 .site-footer { padding: 52px 0; }
@@ -75,7 +74,7 @@ p:last-child { margin-bottom: 0; }
 .site-footer .contact-link,
 .site-footer .contact-link:visited {
   color: var(--link);
-  font: 700 16px var(--font-ui);
+  font: 700 16px var(--font);
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -97,7 +96,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 6px;
   background: #ffd400;
   color: #000;
-  font: 800 8px/1 Arial, sans-serif;
+  font: 700 8px/1 var(--font);
   letter-spacing: .3px;
 }
 
@@ -111,10 +110,10 @@ main { padding-block: 60px; }
   font-weight: 400;
   line-height: 1.2;
 }
+/* Page titles (h1): the same on every page. */
 .title { font-size: 60px; text-align: center; }
-.title.compact { font-size: 46px; color: #000; }
-.heading { font-size: 60px; }
-.heading.medium { font-size: 38px; }
+/* Section headings (h2): smaller than the title, aligned like the text they introduce. */
+.heading { font-size: 38px; }
 
 /* Columns have no gap; each cell gets 15px of padding instead (as on the old site). */
 .grid { display: grid; row-gap: 45px; }
@@ -143,9 +142,8 @@ main { padding-block: 60px; }
 .card .show { margin-bottom: 15px; }
 .card .player { align-self: stretch; margin-top: auto; }
 .card img { width: 150px; height: 150px; object-fit: contain; }
-.card h3 { margin: 15px 0 0; font: 400 16px/1.5 var(--font-ui); }
-.show { display: block; font: italic 12px/1.5 var(--font-ui); }
-.characters .video p { font-family: var(--font-ui); }
+.card h3 { margin: 15px 0 0; font: 400 16px/1.5 var(--font); }
+.show { display: block; font: italic 12px/1.5 var(--font); }
 .clips .video iframe { height: 200px; aspect-ratio: auto; }
 
 /* Audio player (built by /js/player.js; plain <audio controls> without JavaScript) */
@@ -172,23 +170,18 @@ main { padding-block: 60px; }
 .player .bar span { display: block; width: 0; height: 100%; background: #ac987c; }
 
 /* Appearances */
-.events h1 { margin: 0; font: 300 56px/1.2 var(--font-ui); text-align: center; }
-.events .intro { margin: 0 0 30px; font: 20px/1.2 var(--font-ui); text-align: center; }
-.events table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); }
-.events { padding-top: 15px; }
+.events .intro { margin: 0 0 30px; font-size: 20px; text-align: center; }
+.events table { width: 100%; border-collapse: collapse; font-family: var(--font); }
 .events td { width: 33.33%; padding: 30px 0; vertical-align: top; }
 .events a { color: var(--link-event); }
-.events .note { margin-top: 30px; font: 10px var(--font-ui); text-align: center; }
+.events .note { margin-top: 30px; font: 10px var(--font); text-align: center; }
 
 /* Autographs */
-.autographs h1 { margin: 0; font-size: 24px; font-weight: 400; }
 .autographs p { margin: 0; }
 .autographs .indent { padding-left: 1.6em; }
 
 /* Biography */
-.bio { padding-top: 30px; }
 .bio .split-3-7 > * { padding: 0; }
-.bio .heading { margin-bottom: 0; }
 .bio .headshot { width: 96%; }
 .bio .body { padding-left: 15px; color: #000; line-height: 1.36; }
 .bio .body p { margin: 0 0 22px; }
@@ -207,10 +200,10 @@ main { padding-block: 60px; }
   border-radius: 12px;
   background: #ffd400;
   color: #000;
-  font: 800 17px/1 Arial, sans-serif;
+  font: 700 17px/1 var(--font);
   letter-spacing: .5px;
 }
-.bio .credits { margin-top: 15px; padding: 15px; color: #000; font-family: Montserrat, sans-serif; }
+.bio .credits { margin-top: 15px; padding: 15px; color: #000; }
 .bio .credits ul { margin: 0; padding-left: 40px; }
 .bio .credits li { margin-bottom: 5px; line-height: 1.2; }
 .bio .story { padding: 15px; color: #000; }
@@ -225,7 +218,7 @@ main { padding-block: 60px; }
 .contact-form { display: grid; grid-template-columns: 3fr 7fr; margin-top: 45px; }
 .contact-form .icon { padding-top: 40px; text-align: center; }
 .contact-form .icon img { width: 31px; }
-.contact-form form { padding: 15px; font-family: var(--font-ui); }
+.contact-form form { padding: 15px; font-family: var(--font); }
 .contact-form input, .contact-form textarea {
   display: block;
   width: 60%;
@@ -265,7 +258,7 @@ main { padding-block: 60px; }
   border-radius: 6px;
   background: var(--button);
   color: #000;
-  font: 16px/1 var(--font-ui);
+  font: 16px/1 var(--font);
   text-align: center;
   text-decoration: none;
 }
@@ -274,10 +267,7 @@ main { padding-block: 60px; }
 .feature { display: grid; grid-template-columns: 1fr 1fr; align-items: start; margin-top: 30px; }
 .feature > :last-child { padding: 0 15px; }
 .feature .media { text-align: center; }
-.feature .heading { text-align: center; }
-.feature .heading.left { text-align: left; }
 .feature strong a, .feature a strong { color: var(--link); }
-.kids { padding-top: 30px; }
 .albums { margin-top: 45px; }
 .albums.grid > * { padding: 0; }
 .album { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-items: start; margin-bottom: 56px; }
@@ -290,7 +280,6 @@ main { padding-block: 60px; }
 .products .item p { min-height: 48px; margin-bottom: 15px; }
 .products .item div { text-align: center; }
 .calendly { width: 100%; height: 700px; border: 0; }
-.coaching .heading, .supplies .heading { text-align: left; }
 
 /* ---------- Phones: one column, centred ---------- */
 
@@ -305,7 +294,9 @@ main { padding-block: 60px; }
   .site-footer .container { flex-direction: column-reverse; gap: 12px; }
   .social { justify-content: center; }
 
-  main, .heading, .heading.left, .coaching .heading, .supplies .heading { text-align: center; }
+  main { text-align: center; }
+  .title { font-size: 44px; }
+  .heading { font-size: 32px; }
   .grid, .feature, .album, .contact-form, .streaming, .cols-2, .cols-3, .cols-4, .split-3-7 { grid-template-columns: 1fr; }
   .streaming { gap: 10px; }
   .contact-form .icon { text-align: center; }
@@ -319,12 +310,8 @@ main { padding-block: 60px; }
   .bio .body { padding-left: 0; }
   /* On phones the old site shows the text before the picture. */
   .feature .media { order: 2; }
-  /* Biography on phones: title, then the photo (centred, about 30% smaller than on
-     desktop), then the text. The text column's children join the grid so the photo
-     can sit between the title and the first paragraph. */
+  /* Biography on phones: the photo (centred, about 30% smaller than on desktop), then the text. */
   .bio .split-3-7 { row-gap: 15px; }
-  .bio .split-3-7 > :last-child { display: contents; }
-  .bio .heading { order: -1; }
   .bio .headshot { display: block; width: 236px; margin: 0 auto; }
   .feature.book .media { order: 0; }
   .autographs, .contact-form form, .bio .credits { text-align: left; }
@@ -335,7 +322,6 @@ main { padding-block: 60px; }
 .cards { margin-top: 65px; row-gap: 58px; }
 
 /* Autographs address and indented notes */
-.autographs { padding-top: 15px; }
 .autographs a { text-decoration: none; }
 .autographs address { padding-left: 1.6em; font-style: normal; }
 
@@ -344,10 +330,8 @@ main { padding-block: 60px; }
 .streaming-intro { margin-top: 45px; }
 
 /* Voice-over help */
-.book-title { margin: 30px 0 24px; font: 400 60px/1.2 var(--font); }
 a.soft { color: var(--link-soft); }
 a.plain { color: inherit; text-decoration: none; }
-.vo-help { padding-top: 15px; }
 .vo-help .feature { margin-top: 45px; }
 .vo-help .products + .feature { margin-top: 75px; }
 

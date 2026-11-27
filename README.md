@@ -14,6 +14,10 @@ one small JS file). No build step.
 | `images/` | All pictures. `images/icons.svg` holds the social media icons. |
 | `audio/` | The 23 character voice clips. |
 
+Fonts and headings: the site uses two fonts, Anton for headings and Open Sans for
+everything else. Each page has one title, `<h1 class="title">`, and section
+headings use `<h2 class="heading">` (add `center` when the heading spans the page).
+
 The header, menu and footer are repeated in every page. If you change one (for
 example, add a menu item), make the same change in all of them.
 
