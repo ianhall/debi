@@ -174,6 +174,8 @@ main { padding-block: 60px; }
 .bio .story p { margin-bottom: 24px; }
 .bio .story + .story { padding-top: 0; }
 .bio .story + .story p { margin-bottom: 15px; }
+/* Biography paragraphs are justified on every screen size; hyphenation avoids wide gaps on phones. */
+.bio .body p, .bio .story p { text-align: justify; hyphens: auto; }
 .bio .story a { font-weight: 700; }
 
 /* Contact */
@@ -208,7 +210,8 @@ main { padding-block: 60px; }
 .agents .agent a { color: #000; }
 .agents .role { font-size: 20px; }
 .agents .role small { display: block; font-size: 18px; }
-.agents .phone { margin-top: auto; padding-top: 24px; }
+/* Push each agency's phone line and button to the bottom so both buttons line up. */
+.agents .agent .phone { margin-top: auto; padding-top: 24px; }
 .agents .role { margin-bottom: 0; }
 .button {
   display: block;
@@ -250,7 +253,9 @@ main { padding-block: 60px; }
 
 @media (max-width: 767px) {
   .menu { text-align: right; }
-  .menu ul { text-align: left; }
+  /* Menu items line up under the "☰ Menu" button on the right. */
+  .menu ul { text-align: right; }
+  .menu li a { padding-right: 15px; }
 
   .site-header .container, .site-footer .container { flex-direction: column; text-align: center; }
   .site-header .logo-link { margin-bottom: 8px; }
@@ -269,7 +274,7 @@ main { padding-block: 60px; }
   /* On phones the old site shows the text before the picture. */
   .bio .split-3-7 > :first-child, .feature .media { order: 2; }
   .feature.book .media { order: 0; }
-  .autographs, .contact-form form { text-align: left; }
+  .autographs, .contact-form form, .bio .credits { text-align: left; }
   .bio .imdb { width: 30%; }
 }
 
