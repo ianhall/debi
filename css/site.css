@@ -250,7 +250,9 @@ main { padding-block: 60px; }
 
 @media (max-width: 767px) {
   .menu { text-align: right; }
-  .menu ul { text-align: left; }
+  /* Menu items line up under the "☰ Menu" button on the right. */
+  .menu ul { text-align: right; }
+  .menu li a { padding-right: 15px; }
 
   .site-header .container, .site-footer .container { flex-direction: column; text-align: center; }
   .site-header .logo-link { margin-bottom: 8px; }
